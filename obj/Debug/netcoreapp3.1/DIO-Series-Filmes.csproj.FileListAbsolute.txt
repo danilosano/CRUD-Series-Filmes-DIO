@@ -1,0 +1,13 @@
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\obj\Debug\netcoreapp3.1\DIO-Series-Filmes.csprojAssemblyReference.cache
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\obj\Debug\netcoreapp3.1\DIO-Series-Filmes.AssemblyInfoInputs.cache
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\obj\Debug\netcoreapp3.1\DIO-Series-Filmes.AssemblyInfo.cs
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\obj\Debug\netcoreapp3.1\DIO-Series-Filmes.csproj.CoreCompileInputs.cache
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\bin\Debug\netcoreapp3.1\DIO-Series-Filmes.exe
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\bin\Debug\netcoreapp3.1\DIO-Series-Filmes.deps.json
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\bin\Debug\netcoreapp3.1\DIO-Series-Filmes.runtimeconfig.json
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\bin\Debug\netcoreapp3.1\DIO-Series-Filmes.runtimeconfig.dev.json
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\bin\Debug\netcoreapp3.1\DIO-Series-Filmes.dll
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\bin\Debug\netcoreapp3.1\DIO-Series-Filmes.pdb
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\obj\Debug\netcoreapp3.1\DIO-Series-Filmes.dll
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\obj\Debug\netcoreapp3.1\DIO-Series-Filmes.pdb
+C:\GIT\DIO-Desafios\DIO-Series-Filmes\obj\Debug\netcoreapp3.1\DIO-Series-Filmes.genruntimeconfig.cache

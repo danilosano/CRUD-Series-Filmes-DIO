@@ -1,4 +1,4 @@
-namespace DIO_Series_Filmes.Enum
+namespace DIO_Series_Filmes
 {
     public enum Genero
     {
