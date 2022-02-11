@@ -10,15 +10,17 @@ namespace DIO_Series_Filmes
         private string Titulo { get; set; }
         private string Descricao { get; set; }
         private int Ano { get; set; }
+        private Categoria categoria{get; set;}
         private bool Excluido{get; set; }
 
-        public Series(int Id,Genero genero, string titulo, string descricao, int ano, bool Excluido)
+        public Series(int Id,Genero genero, string titulo, string descricao, int ano, Categoria categoria, bool Excluido)
         {
             this.Id = Id;
             this.genero = genero;
             this.Titulo = titulo;
             this.Descricao = descricao;
             this.Ano = ano;
+            this.categoria = categoria;
             this.Excluido = Excluido;
 
         }
@@ -30,6 +32,7 @@ namespace DIO_Series_Filmes
             retorno += "Título : "+this.Titulo + Environment.NewLine;
             retorno += "Descrição : "+this.Descricao + Environment.NewLine;
             retorno += "Ano de Início : "+this.Ano + Environment.NewLine;
+            retorno += "Categoria : "+this.categoria + Environment.NewLine;
 
             return retorno;
         }

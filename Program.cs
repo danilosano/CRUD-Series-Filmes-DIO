@@ -15,23 +15,23 @@ namespace DIO_Series_Filmes
                 switch(opcaoUsuario)
                 {
                     case "1":
-                        ListarSerie();
+                        ListarRegistro();
                         break;
                     
                     case "2":
-                        InserirSerie();
+                        InserirRegistro();
                         break;
 
                     case "3":
-                        AtualizarSerie();
+                        AtualizarRegistro();
                         break;
 
                     case "4":
-                        ExcluirSerie();
+                        ExcluirRegistro();
                         break;
                         
                     case "5":
-                        VisualizarSerie();
+                        VisualizarRegistro();
                         
                         break;
 
@@ -46,7 +46,7 @@ namespace DIO_Series_Filmes
             }
         }
 
-        private static void AtualizarSerie()
+        private static void AtualizarRegistro()
         {
             System.Console.WriteLine("Qual registro você quer atualizar?");
             int input = int.Parse(Console.ReadLine());
@@ -67,27 +67,35 @@ namespace DIO_Series_Filmes
             System.Console.WriteLine("Digite a descrição da Série/Filme :");
             string entradaDescricao = Console.ReadLine();
 
+            foreach (int item in Enum.GetValues(typeof(Categoria)))
+            {
+                System.Console.WriteLine($"{item} - {Enum.GetName(typeof(Categoria), item)}");
+            }
+            System.Console.WriteLine("Selecione a categoria do registro:");
+            int entradaCategoria = int.Parse(Console.ReadLine());
+
+
             Series objeto = new Series(
                 Id: repositorio.ProximoId(),
                 genero : (Genero)entradaGenero,
                 titulo: entradaTitulo,
                 ano: entradaAno,
                 descricao: entradaDescricao,
+                categoria: (Categoria)entradaCategoria,
                 Excluido : false
             );
 
             repositorio.Atualizar(input,objeto);
         }
 
-        private static void VisualizarSerie()
+        private static void VisualizarRegistro()
         {
             System.Console.WriteLine("Digite o ID do item que deseja visualizar: ");
             int input = int.Parse(Console.ReadLine());
-            System.Console.WriteLine(repositorio.RetornaPorID(input));
-            
+            System.Console.WriteLine(repositorio.RetornaPorID(input));    
         }
 
-        private static void ExcluirSerie()
+        private static void ExcluirRegistro()
         {
             System.Console.WriteLine("Digite o ID do registro para excluir :");
             int input = int.Parse(Console.ReadLine());
@@ -100,7 +108,7 @@ namespace DIO_Series_Filmes
                 break;
 
                 case 2:
-                ExcluirSerie();
+                ExcluirRegistro();
                 break;
 
                 case 3:
@@ -113,7 +121,7 @@ namespace DIO_Series_Filmes
             
         }
 
-        private static void InserirSerie()
+        private static void InserirRegistro()
         {
             System.Console.WriteLine("Inserir um novo valor:");
 
@@ -133,19 +141,27 @@ namespace DIO_Series_Filmes
             System.Console.WriteLine("Digite a descrição da Série/Filme :");
             string entradaDescricao = Console.ReadLine();
 
+            foreach (int item in Enum.GetValues(typeof(Categoria)))
+            {
+                System.Console.WriteLine($"{item} - {Enum.GetName(typeof(Categoria), item)}");
+            }
+            System.Console.WriteLine("Selecione a categoria do registro:");
+            int entradaCategoria = int.Parse(Console.ReadLine());
+
             Series objeto = new Series(
                 Id: repositorio.ProximoId(),
                 genero : (Genero)entradaGenero,
                 titulo: entradaTitulo,
                 ano: entradaAno,
                 descricao: entradaDescricao,
+                categoria: (Categoria)entradaCategoria,
                 Excluido : false
             );
 
             repositorio.insere(objeto);
         }
 
-        private static void ListarSerie()
+        private static void ListarRegistro()
         {
             System.Console.WriteLine("Listagem de dados");
 
