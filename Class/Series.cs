@@ -45,5 +45,10 @@ namespace DIO_Series_Filmes
         public void Excluir(){
             this.Excluido = true;;
         }
+
+        public bool retornaExcluido()
+		{
+			return this.Excluido;
+		}
     }
 }

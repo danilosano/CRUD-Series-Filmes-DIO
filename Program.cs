@@ -23,11 +23,16 @@ namespace DIO_Series_Filmes
                         break;
 
                     case "3":
-                        //ExcluirSerie();
+                        AtualizarSerie();
                         break;
 
                     case "4":
-                        //VisualizarSerie();
+                        ExcluirSerie();
+                        break;
+                        
+                    case "5":
+                        VisualizarSerie();
+                        
                         break;
 
                     case "C":
@@ -39,6 +44,73 @@ namespace DIO_Series_Filmes
                 }
                 opcaoUsuario = ObterOpcaoUsuario();
             }
+        }
+
+        private static void AtualizarSerie()
+        {
+            System.Console.WriteLine("Qual registro você quer atualizar?");
+            int input = int.Parse(Console.ReadLine());
+
+            foreach (int item in Enum.GetValues(typeof(Genero)))
+            {
+                System.Console.WriteLine($"{item} - {Enum.GetName(typeof(Genero), item)}");
+            }
+            System.Console.WriteLine("Digite o gênero entre as opçòes acima: ");
+            int entradaGenero = int.Parse(Console.ReadLine());
+
+            System.Console.WriteLine("Digite o título da Série/Filme :");
+            string entradaTitulo = Console.ReadLine();
+
+            System.Console.WriteLine("Digite o ano de início da Série/Filme :");
+            int entradaAno = int.Parse(Console.ReadLine());
+
+            System.Console.WriteLine("Digite a descrição da Série/Filme :");
+            string entradaDescricao = Console.ReadLine();
+
+            Series objeto = new Series(
+                Id: repositorio.ProximoId(),
+                genero : (Genero)entradaGenero,
+                titulo: entradaTitulo,
+                ano: entradaAno,
+                descricao: entradaDescricao,
+                Excluido : false
+            );
+
+            repositorio.Atualizar(input,objeto);
+        }
+
+        private static void VisualizarSerie()
+        {
+            System.Console.WriteLine("Digite o ID do item que deseja visualizar: ");
+            int input = int.Parse(Console.ReadLine());
+            System.Console.WriteLine(repositorio.RetornaPorID(input));
+            
+        }
+
+        private static void ExcluirSerie()
+        {
+            System.Console.WriteLine("Digite o ID do registro para excluir :");
+            int input = int.Parse(Console.ReadLine());
+            System.Console.WriteLine("Tem certeza que deseja excluir o registro de ID "+input+"? \n Digite 1 para Sim \n Digite 2 para Não e escolher outro registro \n Digite 3 para retornar ao menu");
+            int decision = int.Parse(Console.ReadLine());
+            switch (decision)
+            {
+                case 1:
+                repositorio.Excluir(input);
+                break;
+
+                case 2:
+                ExcluirSerie();
+                break;
+
+                case 3:
+                break;
+
+                default:
+                System.Console.WriteLine("Opção não esta presente na lista, por favor, digite um número válido");
+                break;
+            }
+            
         }
 
         private static void InserirSerie()
@@ -87,7 +159,8 @@ namespace DIO_Series_Filmes
 
             foreach (var item in lista)
             {
-                System.Console.WriteLine($"ID {item.retornaId()}: - {item.retornaTitulo()}");
+                var excluido = item.retornaExcluido();
+                Console.WriteLine("ID: {0}: - {1} {2}", item.retornaId(), item.retornaTitulo(), (excluido ? "*Excluído*" : ""));
             }
         }
 
